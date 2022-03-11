@@ -30,7 +30,7 @@ SCOPE=140
 MARGIN=5
 TEMP="template_ind.txt"
 
-while getopts ":R:I:n:d:p:l:g:b:h" optKey; do
+while getopts ":R:I:n:d:p:l:g:b:s:m:t:h" optKey; do
   case "$optKey" in
     R) REF=${OPTARG};;
     I) VCF=${OPTARG};;
