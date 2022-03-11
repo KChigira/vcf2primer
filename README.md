@@ -1,7 +1,7 @@
 # vcf2primer
 Extract variants from the vcf file and design primers that sandwich the variants.
 
-##Requirement
+## Requirement
 Linux OS<br>
 The following packages must be installed.
 * perl
@@ -29,13 +29,13 @@ $ primer3_core -h
 ```
 Usage will be displayed if the path is passed.<br>
 
-##Install
+## Install
 Download the script files by
 ```
 $ cd ~
 $ git clone "https://github.com/KChigira/vcf2primer.git"
 ```
-##Usage (Tutorial)
+## Usage (Tutorial)
 Move to your working directory (for tutrial, "test")<br>
 Prepare a vcf file containing mutation data of two or more strains to create a primer and a reference sequence file (.fasta) used to create the vcf file. <br>
 In the tutrial set,
@@ -49,7 +49,7 @@ $ samtools faidx data/Osa_chr9.fasta
 ```
 Format column of vcf file must contain "GT" and "DP".<br>
 
-###Make primers of InDel marker
+### Make primers of InDel marker
 ```
 $ bash ~/vcf2primer/v2p_ind.sh \
         -R data/Osa_chr9.fasta \
@@ -65,7 +65,7 @@ You will get 5 files if success.
 * test_ind_sequences.txt
 * test_ind_summary.tsv
 
-####Option
+#### Option
 * -h Display help
 * -R [Referance Genome].fasta   (necessary)
 * -I [Input VCF File].vcf       (necessary)
@@ -82,14 +82,14 @@ You will get 5 files if success.
 ![image](image/v2p_1.png)
 Settings such as the Tm value of the primer can be adjusted by changing the value in the template file in the temp directory.<br>
 
-###Make primers of SNP marker
+### Make primers of SNP marker
 ```
 $ bash ~/vcf2primer/v2p_snp.sh \
         -R data/Osa_chr9.fasta \
         -I data/test_nkw_chr09.vcf \
         -n test_snp
 ```
-###Make primers of SNP marker (1 vs 2 strains)
+### Make primers of SNP marker (1 vs 2 strains)
 If you have vcf file with genotype data of 3 strains like test data, <br>
 you can also develop markers that can distinguish between the first and second strains, and the first and third strains.  
 ```
